@@ -15,21 +15,32 @@ class Currency:
         - symbol - optional symbol used to designate currency
         - digits -- number of significant digits used
         """
-        pass
+        self.name = name
+        self.code = code
+        self.symbol = symbol
+        self.digits = digits
+        
+
 
     def __str__(self):
         """
         Should return the currency code, or code with symbol in parentheses.
         """
-        pass
+        if self.symbol == None:
+            return self.code 
+        else: 
+            return (self.code + self.symbol)
+
+        
 
     def __eq__(self, other):
         """
         All fields must be equal to for the objects to be equal.
         """
+        
         return (type(self) == type(other) and self.name == other.name
-                and self.code == other.code and self.symbol == other.symbol
-                and self.digits == other.digits)
+        and self.code == other.code and self.symbol == other.symbol
+        and self.digits == other.digits)
 
 
 class Money:
