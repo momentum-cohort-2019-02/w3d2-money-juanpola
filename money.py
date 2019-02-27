@@ -31,7 +31,7 @@ class Currency:
         # else: 
         #     return (self.code + self.symbol)
 
-        self.code = code 
+        # self.code = code 
 
     def __eq__(self, other):
         """
@@ -51,17 +51,21 @@ class Money:
     def __init__(self, amount, currency):
         """
         Parameters:
-        - amount -- quantity of currency
-        - currency -- type of currency
+        - amount -- quantity of currency = self.amount = currency
+        - currency -- type of currency = self.currency = currency
         """
-        pass
+        self.amount = currency
+        self.currency = currency 
+        # pass
 
     def __str__(self):
         """
         Should use the currency symbol if available, else use the code.
         Use the currency digits to determine number of digits to show.
         """
-        pass
+        if self.currency.symbol == symbol:
+            return
+        # pass
 
     def __repr__(self):
         return f"<Money {str(self)}>"
